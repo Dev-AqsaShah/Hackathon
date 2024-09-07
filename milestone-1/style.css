@@ -15,7 +15,7 @@ form {
     margin: auto;
     background-color: aliceblue;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     padding: 20px;
 }
 
@@ -32,11 +32,11 @@ legend {
     color: black;
 }
 
-input,textarea {
+input, textarea {
     width: calc(100% - 1px);
     padding: 8px;
     margin-top: 4px;
-    border: 1px solid pink ;
+    border: 1px solid pink;
     border-radius: 4px;
     box-sizing: border-box;
 }
@@ -53,9 +53,22 @@ button {
     margin-top: 10px;
     font-size: 18px;
     font-family: 'Times New Roman', Times, serif;
-    
 }
 
 button:hover {
     background-color: rgb(218, 113, 148);
+}
+
+#resumeOutput {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 2px solid plum;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#resumeOutput h2 {
+    color: black;
 }
