@@ -1,17 +1,21 @@
+// Get the form element
+const resumeForm = document.getElementById("resumeform") as HTMLFormElement | null;
+
 // Listen for the form submit event
-document.getElementById("resumeform")?.addEventListener('submit', function (event) {
+resumeForm?.addEventListener('submit', function (event: Event) {
     event.preventDefault();
 
-    // Type assertion for form elements
-    const nameElement = document.getElementById("name") as HTMLInputElement;
-    const emailElement = document.getElementById("email") as HTMLInputElement;
-    const phoneElement = document.getElementById("phone") as HTMLInputElement;
-    const educationElement = document.getElementById("education") as HTMLInputElement;
-    const experienceElement = document.getElementById("experience") as HTMLInputElement;
-    const skillsElement = document.getElementById("skills") as HTMLInputElement;
+    // Get the form input elements
+    const nameElement = document.getElementById("name") as HTMLInputElement | null;
+    const emailElement = document.getElementById("email") as HTMLInputElement | null;
+    const phoneElement = document.getElementById("phone") as HTMLInputElement | null;
+    const educationElement = document.getElementById("education") as HTMLTextAreaElement | null;
+    const experienceElement = document.getElementById("experience") as HTMLTextAreaElement | null;
+    const skillsElement = document.getElementById("skills") as HTMLTextAreaElement | null;
 
-    // Check if all the elements exist
+    // Check if all elements exist
     if (nameElement && emailElement && phoneElement && educationElement && experienceElement && skillsElement) {
+        // Get the values from the input elements
         const name = nameElement.value;
         const email = emailElement.value;
         const phone = phoneElement.value;
@@ -27,13 +31,13 @@ document.getElementById("resumeform")?.addEventListener('submit', function (even
         localStorage.setItem('experience', experience);
         localStorage.setItem('skills', skills);
 
-        // Update the resume output immediately
+        // Update the resume output
         updateResumeOutput();
     }
 });
 
 // Function to update the resume output based on localStorage values
-function updateResumeOutput() {
+function updateResumeOutput(): void {
     const name = localStorage.getItem('name') || '';
     const email = localStorage.getItem('email') || '';
     const phone = localStorage.getItem('phone') || '';
@@ -41,6 +45,7 @@ function updateResumeOutput() {
     const experience = localStorage.getItem('experience') || '';
     const skills = localStorage.getItem('skills') || '';
 
+    // Create the HTML for the resume output
     const resumeOutput = `
         <h2>Resume</h2>
         <p><strong>Name:</strong> <span id="edit-name" class="editable">${name}</span></p>
@@ -57,38 +62,38 @@ function updateResumeOutput() {
         <p><span id="edit-skills" class="editable">${skills}</span></p>
     `;
 
-    // Get the resume output element
+    // Update the resume output on the page
     const resumeOutputElement = document.getElementById("resumeOutput");
     if (resumeOutputElement) {
-        // Display the resume
         resumeOutputElement.innerHTML = resumeOutput;
 
-        // Make fields editable
+        // Make the fields editable
         makeEditable();
     }
 }
 
 // Function to make fields editable and save changes to localStorage
-function makeEditable() {
+function makeEditable(): void {
     const editableElements = document.querySelectorAll('.editable');
     editableElements.forEach(element => {
         element.addEventListener("click", function () {
-            const currentElement = element as HTMLElement;
+            const currentElement = element as HTMLSpanElement;
             const currentValue = currentElement.textContent || "";
 
-            if (currentElement.tagName === "P" || currentElement.tagName === "SPAN") {
+            if (currentElement.tagName === "SPAN") {
                 const inputElement = document.createElement("input");
                 inputElement.type = "text";
                 inputElement.classList.add('editing-input');
                 inputElement.value = currentValue;
 
+                // Save changes on blur
                 inputElement.addEventListener('blur', function () {
                     currentElement.textContent = inputElement.value;
                     currentElement.style.display = 'inline';
                     inputElement.remove();
 
                     // Update localStorage with the new value
-                    const key = currentElement.id.replace('edit-', ''); // Extract the key from the id
+                    const key = currentElement.id.replace('edit-', ''); // Extract key from the id
                     localStorage.setItem(key, inputElement.value); // Save the updated value in localStorage
                 });
 
