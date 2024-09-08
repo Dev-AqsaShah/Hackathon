@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hackathon</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/60107aa058.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div id="header">
+
+        <nav>
+            <ul id="sidemenu">
+                <li><a href="#header">Personal Info</a></li>
+                <li><a href="#Education">Education</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Work Experience">Work Experience</a></li>
+       
+                <i class="fas fa-regular fa-square-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fas fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- <div class="header-image">
+                <img src="image/logo.jpg" style="height: 450px; width: 120%; border" alt="">
+            </div> -->
+            <div class="header-text">
+                <h1>Hi, I'm <span>Aqsa Shah</span></h1>
+                <h6> I am currently pursuing multiple avenues in the tech industry. <br>
+                    I have completed the first quarter at GIAIC,<br> where I focused on mastering TypeScript,
+                    and now, <br> in the second quarter,<br> I am diving deep into Next.js to further enhance my web
+                    development skills.<br> Alongside this, I am also enrolled in the PIAIC's<br>
+                    Certified Cloud Native and Generative AI Engineering course,<br> where I am exploring 
+                    the fascinating world of<br> cloud computing and AI technologies.<br> These combined experiences 
+                    are helping me build a strong <br>foundation in cutting-edge technologies.
+                </h6>
+            </div>
+           
+        </div>
+    </div>
+
+
+
+
+    <div id="Education">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">Education</h1>
+                    <p>I am currently pursuing a course in Certified Cloud Applied Generative AI Engineering, where I am
+                        honing my skills in cloud computing and cutting-edge AI technologies. With a passion for
+                        innovation and a drive to explore the possibilities of AI, I am dedicated to creating meaningful
+                        and impactful solutions.
+
+                        My journey into the world of technology began with a fascination for AI and its potential to
+                        revolutionize industries. Through hands-on projects and immersive learning experiences, I am
+                        developing a strong foundation in AI engineering, cloud architecture, and data science.
+
+                        I am eager to apply my skills and knowledge to real-world challenges, contributing to the
+                        advancement of AI-driven solutions. With a commitment to lifelong learning and a mindset of
+                        continuous improvement, I am excited about the opportunities that lie ahead in the field of AI
+                        engineering.</p>
+
+                    <div class="tab-titales">
+                        <p class="tab-links active-link" onclick="opentab('skills')">skills</p>
+                        <p class="tab-links" onclick="opentab('experience')">experience</p>
+                        <p class="tab-links" onclick="opentab('education')">study</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>html/CSS</span><br></li>
+                            <li><span>JavaScript/TypeScript</span><br></li>
+                            <li><span>React/Next.js</span><br></li>
+                            <li><span>Python</span><br></li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2024 - Current</span><br>GIAIC - cloud Applied Generative Ai Engineering At Governor House
+                                Sindh</li>
+                            <li><span>2024 - Current</span><br>PIAIC - Certified Cloud Native and Generative AI Engineering</li>
+                            <li><span>2024 - Quarter-1</span><br>Worked as Senior Student</li>
+                            <li><span>2024 - Current</span><br>Internship at CodeSoft</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2023</span><br>BS.Science </li>
+                            <li><span>2020</span><br>Bahria Foundation College</li>
+                            <li><span>2018</span><br>Paras Science School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div id="Skills">
+        <div class="container">
+            <h1 class="sub-title">Skills</h1>
+            <div class="services-list">
+                <div>
+                    <i class="fa-solid fa-code"></i>
+                    <h2>Web Design</h2>
+                    <p>My approach to web design is based on a combination of creativity, technical expertise, and a
+                        deep understanding of user experience. I work closely with my clients to understand their goals
+                        and objectives, ensuring that the final product not only looks great but also delivers results.
+                    </p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-sharp fa-solid fa-crop"></i>
+                    <h2>UI/UX Design</h2>
+                    <p>A good design should not only be visually appealing but also intuitive to use. That's why I pay
+                        attention to every detail, from the layout and typography to the color scheme and interactive
+                        elements. The result is a digital experience that is not only beautiful but also functional and
+                        user-friendly.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="fa-brands fa-app-store"></i>
+                    <h2>App design</h2>
+                    <p>I believe that great app design goes beyond just aesthetics. It's about creating a seamless and
+                        enjoyable experience for the user. That's why I pay attention to every detail, from the layout
+                        and navigation to the interactive elements and animations</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div id="Work Experience">
+        <div class="container">
+            <h1 class="sub-title">Work Experience</h1>
+            <div class="work-list">
+                <div class="Work">
+                    <img src="image/w-1.jpg">
+                    <div class="layer">
+                        <h3>Text To Voice Converter</h3>
+                        <p>Experience the power of technology with my text-to-voice converter, transforming written
+                            words
+                            into spoken language at the click of a button.</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="Work">
+                    <img src="image/w-2.jpg">
+                    <div class="layer">
+                        <h3>Amazon Clone</h3>
+                        <p>"Explore the convenience of online shopping with my Amazon clone, offering a seamless
+                            shopping
+                            experience with a wide range of products at your fingertips."</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+                <div class="Work">
+                    <img src="image/w-3.jpg">
+                    <div class="layer">
+                        <h3>Stop Watch</h3>
+                        <p>"Enhance your time management skills with my stopwatch, a simple yet effective tool to track
+                            and
+                            manage your activities with precision and ease."</p>
+                        <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn">See more</a>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+</html>
