@@ -17,21 +17,36 @@ var _a;
         var education = educationElement.value;
         var experience = experienceElement.value;
         var skills = skillsElement.value;
-        // Create the resume output
-        var resumeOutput = "\n            <h2>Resume</h2>\n            <p><strong>Name:</strong> <span id=\"edit-name\" class=\"editable\">".concat(name_1, "</span></p>\n            <p><strong>Email:</strong> <span id=\"edit-email\" class=\"editable\">").concat(email, "</span></p>\n            <p><strong>Phone:</strong> <span id=\"edit-phone\" class=\"editable\">").concat(phone, "</span></p>\n\n            <h3>Education</h3>\n            <p><span id=\"edit-education\" class=\"editable\">").concat(education, "</span></p>\n\n            <h3>Experience</h3>\n            <p><span id=\"edit-experience\" class=\"editable\">").concat(experience, "</span></p>\n\n            <h3>Skills</h3>\n            <p><span id=\"edit-skills\" class=\"editable\">").concat(skills, "</span></p>\n        ");
-        // Get the resume output element
-        var resumeOutputElement = document.getElementById("resumeOutput");
-        if (resumeOutputElement) {
-            // Display the resume
-            resumeOutputElement.innerHTML = resumeOutput;
-            // Enable edit functionality
-            makeEditable();
-        }
-    }
-    else {
-        console.error("One or more form elements are missing");
+        // Store the values in localStorage
+        localStorage.setItem('name', name_1);
+        localStorage.setItem('email', email);
+        localStorage.setItem('phone', phone);
+        localStorage.setItem('education', education);
+        localStorage.setItem('experience', experience);
+        localStorage.setItem('skills', skills);
+        // Update the resume output immediately
+        updateResumeOutput();
     }
 });
+// Function to update the resume output based on localStorage values
+function updateResumeOutput() {
+    var name = localStorage.getItem('name') || '';
+    var email = localStorage.getItem('email') || '';
+    var phone = localStorage.getItem('phone') || '';
+    var education = localStorage.getItem('education') || '';
+    var experience = localStorage.getItem('experience') || '';
+    var skills = localStorage.getItem('skills') || '';
+    var resumeOutput = "\n        <h2>Resume</h2>\n        <p><strong>Name:</strong> <span id=\"edit-name\" class=\"editable\">".concat(name, "</span></p>\n        <p><strong>Email:</strong> <span id=\"edit-email\" class=\"editable\">").concat(email, "</span></p>\n        <p><strong>Phone:</strong> <span id=\"edit-phone\" class=\"editable\">").concat(phone, "</span></p>\n\n        <h3>Education</h3>\n        <p><span id=\"edit-education\" class=\"editable\">").concat(education, "</span></p>\n\n        <h3>Experience</h3>\n        <p><span id=\"edit-experience\" class=\"editable\">").concat(experience, "</span></p>\n\n        <h3>Skills</h3>\n        <p><span id=\"edit-skills\" class=\"editable\">").concat(skills, "</span></p>\n    ");
+    // Get the resume output element
+    var resumeOutputElement = document.getElementById("resumeOutput");
+    if (resumeOutputElement) {
+        // Display the resume
+        resumeOutputElement.innerHTML = resumeOutput;
+        // Make fields editable
+        makeEditable();
+    }
+}
+// Function to make fields editable and save changes to localStorage
 function makeEditable() {
     var editableElements = document.querySelectorAll('.editable');
     editableElements.forEach(function (element) {
@@ -48,6 +63,9 @@ function makeEditable() {
                     currentElement.textContent = inputElement_1.value;
                     currentElement.style.display = 'inline';
                     inputElement_1.remove();
+                    // Update localStorage with the new value
+                    var key = currentElement.id.replace('edit-', ''); // Extract the key from the id
+                    localStorage.setItem(key, inputElement_1.value); // Save the updated value in localStorage
                 });
                 currentElement.style.display = 'none';
                 (_a = currentElement.parentNode) === null || _a === void 0 ? void 0 : _a.insertBefore(inputElement_1, currentElement);
@@ -56,3 +74,7 @@ function makeEditable() {
         });
     });
 }
+// Load the resume output when the page loads
+window.addEventListener('load', function () {
+    updateResumeOutput(); // Load the stored data when the page is refreshed
+});
