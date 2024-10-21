@@ -1,0 +1,123 @@
+/* General Styles */
+body {
+    font-family: "bold";
+    margin: auto;
+    padding: auto;
+    background-color: black;
+}
+
+/* Container for Flex Layout */
+.container {
+    display: flex;
+    flex-direction: row; /* Change to row to align sections side by side */
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    gap: 5px; /* Optional: Adds space between the form and resume sections */
+    padding: 5px;
+}
+
+/* Styling the Form Section */
+.form-section {
+    flex: 1;
+    padding: 50px;
+    background-color: rgb(222, 172, 217);
+    overflow: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    max-width: 35%; /* Adjust width to take 45% of the container */
+    margin: auto;
+    height: 70%;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid rgb(224, 12, 224);
+
+}
+
+/* Styling Headings */
+h2 {
+    margin-top: 0;
+    text-align: center;
+    color: black;
+}
+
+/* Styling the Resume Section */
+.resume-section {
+    flex: 1;
+    padding: 10px;
+    background-color: rgb(222, 172, 217);
+    border: 2px solid rgb(224, 12, 224);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow-y: auto;
+    max-width: 40%; /* Adjust width to take 45% of the container */
+    height: 84%;
+    margin-top: 35px;
+    margin-right: 50px;
+}
+
+/* Editable Fields */
+.editable {
+    cursor: pointer;
+}
+
+/* Input Styles */
+input[type="text"], textarea {
+    width: calc(100% - 1px);
+    padding: 8px;
+    margin-top: 4px;
+    border: 1px solid rgb(197, 28, 186);
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Scrollbar Styling for Resume Section */
+/* .resume-section::-webkit-scrollbar {
+    width: 10px;
+} */
+
+/* .resume-section::-webkit-scrollbar-thumb {
+    background-color: #ce2e2e;
+    border-radius: 5px;
+} */
+
+/* Button Styling */
+button {
+    display: block;
+    width: 170px;
+    padding: 8px;
+    background-color: rgb(204, 96, 195);
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 5px;
+    font-size: 20px;
+    margin-left: 100px;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+button:hover {
+    background-color: rgb(213, 11, 163);
+}
+
+/* Resume Output Section */
+#resumeOutput {
+    max-width: 400px;
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid rgb(11, 179, 225);
+    border-radius: 8px;
+    background-color: rgb(174, 207, 233);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    height: 90%;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#resumeOutput h2 {
+    color: black;
+}
