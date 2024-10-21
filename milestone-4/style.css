@@ -1,19 +1,19 @@
 /* General Styles */
 body {
-    font-family: "bold";
-    margin: auto;
-    padding: auto;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: black;
 }
 
 /* Container for Flex Layout */
 .container {
     display: flex;
-    flex-direction: row; /* Change to row to align sections side by side */
+    flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     height: 100vh;
-    gap: 5px; /* Optional: Adds space between the form and resume sections */
+    gap: 5px;
     padding: 5px;
 }
 
@@ -25,13 +25,11 @@ body {
     overflow: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    max-width: 35%; /* Adjust width to take 45% of the container */
+    max-width: 35%;
     margin: auto;
     height: 70%;
     font-size: medium;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border: 2px solid rgb(224, 12, 224);
-
 }
 
 /* Styling Headings */
@@ -50,7 +48,7 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
-    max-width: 40%; /* Adjust width to take 45% of the container */
+    max-width: 40%;
     height: 84%;
     margin-top: 35px;
     margin-right: 50px;
@@ -71,16 +69,6 @@ input[type="text"], textarea {
     box-sizing: border-box;
 }
 
-/* Scrollbar Styling for Resume Section */
-/* .resume-section::-webkit-scrollbar {
-    width: 10px;
-} */
-
-/* .resume-section::-webkit-scrollbar-thumb {
-    background-color: #ce2e2e;
-    border-radius: 5px;
-} */
-
 /* Button Styling */
 button {
     display: block;
@@ -95,7 +83,6 @@ button {
     font-size: 20px;
     margin-left: 100px;
     font-family: 'Times New Roman', Times, serif;
-    
 }
 
 button:hover {
@@ -120,4 +107,31 @@ button:hover {
 
 #resumeOutput h2 {
     color: black;
+}
+
+/* Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    .form-section, .resume-section {
+        max-width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    button {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    #resumeOutput {
+        max-width: 100%;
+        height: auto;
+        margin-left: 0;
+    }
 }
