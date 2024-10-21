@@ -106,6 +106,8 @@ button:hover {
         height: auto;
         margin: 0;
     }
+    .resume-section {
+        width: 90%;
 
     button {
         margin-left: auto;
